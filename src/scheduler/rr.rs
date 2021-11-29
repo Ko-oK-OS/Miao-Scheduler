@@ -29,8 +29,8 @@ impl<T: Task> RRScheduler<T>{
             let current_context = current_task.get_context();
             unsafe{
                 __switch(
-                    next_context,
-                    current_context
+                    current_context,
+                    next_context
                 );
             }
         }
